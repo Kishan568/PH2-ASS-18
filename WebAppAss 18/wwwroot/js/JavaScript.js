@@ -6,7 +6,7 @@
 
     //Function to fetch and display tasks
     function displayTasks() {
-        fetch("http://localhost:5233/api/Movies")
+        fetch("http://localhost:5200/api/Movies")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -36,7 +36,7 @@
         const genre = document.getElementById("genre").value;
         const releaseDate = document.getElementById("releaseDate").value;
 
-        fetch("http://localhost:5233/api/Movies", {
+        fetch("http://localhost:5200/api/Movies", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -75,7 +75,7 @@
         const newReleaseDate = document.getElementById("newReleaseDate").value;
 
 
-        fetch(`http://localhost:5233/api/Movies/${movieId}`, {
+        fetch(`http://localhost:5200/api/Movies/${movieId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -113,7 +113,7 @@
         e.preventDefault();
         const deleteMovieId = document.getElementById("deleteMovieId").value;
 
-        fetch(`/api/Movies/${deleteMovieId}`, {
+        fetch(`http://localhost:5200/api/Movies/${deleteMovieId}`, {
             method: "DELETE"
         })
             .then(response => {
